@@ -19,9 +19,6 @@ The Person class acts as an abstract base and has three derived classes - Doctor
 ### Method Polymorphism:
 Polymorphism is evident in the CreateAsync method present in the PersonManager, DoctorManager and StaffManager classes. While the function names remain the same, their behavior varies based on the parameters and the concrete class implementation.
 
-### Polymorphism in DomainService:
-DomainService class is extended by PersonManager, DoctorManager, and StaffManager. By inheriting from the DomainService the classes can utilize its methods and properties, essentially demonstrating polymorphism.
-
 ### Utilizing Discriminator in Entity Framework Core:
 Another scenario where polymorphism comes into play is in the Entity Framework Core's polymorphic queries and relationships. In my application, a .HasDiscriminator<string>("PersonType") is included in the DbContext configuration. This method is crucial in determining the type of Person (Doctor, Staff, Manager).
 

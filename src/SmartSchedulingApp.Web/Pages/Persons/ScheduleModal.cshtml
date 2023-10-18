@@ -1,0 +1,54 @@
+﻿@page
+@using SmartSchedulingApp.Permissions
+@using Microsoft.AspNetCore.Authorization
+@using SmartSchedulingApp.Localization;
+@using Microsoft.Extensions.Localization;
+@using SmartSchedulingApp.Web.Pages.Persons;
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal;
+@inject IStringLocalizer<SmartSchedulingAppResource> L
+@inject IAuthorizationService AuthorizationService
+@model ScheduleModalModel
+@{
+    Layout = null;
+}
+
+<form asp-page="/Persons/ScheduleModal">
+    <abp-modal>
+        <abp-modal-header title="@L["Schedules"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Schedule.Date" />
+            <abp-input asp-for="Schedule.Timeslot.StartTime" />
+            <abp-input asp-for="Schedule.Timeslot.EndTime" />
+        </abp-modal-body>
+
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+
+        @if (Model.Person != null && Model.Person.Schedules != null)
+        {
+            <div class="px-3">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var schedule in Model.Person.Schedules)
+                        {
+                            <tr>
+                                <td>@schedule.Date.ToString("yyyy-MM-dd")</td>
+                                <td>@schedule.Timeslot.StartTime.ToString("hh:mm tt")</td>
+                                <td>@schedule.Timeslot.EndTime.ToString("hh:mm tt")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+
+    </abp-modal>
+    <input type="hidden" name="id" value="@Model.Person.Id" />
+    <input type="hidden" name="personType" value="@Model.PersonType" />
+</form>

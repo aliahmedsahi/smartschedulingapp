@@ -1,0 +1,81 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using SmartSchedulingApp.Localization
+@using Volo.Abp.Users
+@model SmartSchedulingApp.Web.Pages.IndexModel
+@inject IHtmlLocalizer<SmartSchedulingAppResource> L
+@inject ICurrentUser CurrentUser
+@section styles {
+    <abp-style src="/Pages/Index.css" />
+}
+@section scripts {
+    <abp-script src="/Pages/Index.js" />
+}
+<div class="container">
+    <div class="p-5 text-center">
+
+        @if (!CurrentUser.IsAuthenticated)
+        {
+            <div class="p-5">
+                <a abp-button="Primary" href="~/Account/Login"><i class="fa fa-sign-in"></i> @L["Login"]</a>
+            </div>
+        }
+
+        else
+        {
+            @if (Model.Person != null && Model.Person.Notifications != null && Model.Person.Notifications.Count > 0)
+            {
+                <h3>Notifications</h3>
+
+                <abp-card>
+                    <abp-card-body>
+                        @foreach (var notification in Model.Person.Notifications)
+                        {
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>@notification.Text</p>
+                                </div>
+                            </div>
+                        }
+                    </abp-card-body>
+                </abp-card>
+            }
+
+            @if (Model.Person != null && Model.Person.Schedules != null && Model.Person.Schedules.Count > 0)
+            {
+                <h3>Upcoming Schedules</h3>
+
+                <abp-card>
+                    <abp-card-body>
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Start Time</th>
+                                            <th>End Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var schedule in Model.Person.Schedules)
+                                        {
+                                            <tr>
+                                                <td>@schedule?.Date.ToString("dd/MM/yyyy")</td>
+                                                <td>@schedule?.Timeslot?.StartTime.ToString("hh:mm tt")</td>
+                                                <td>@schedule?.Timeslot?.EndTime.ToString("hh:mm tt")</td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </abp-card-body>
+                </abp-card>
+            }
+        }
+
+    </div>
+</div>

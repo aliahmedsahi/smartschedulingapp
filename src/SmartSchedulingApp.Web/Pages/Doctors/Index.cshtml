@@ -1,0 +1,23 @@
+﻿@page
+@using SmartSchedulingApp.Permissions
+@using Microsoft.AspNetCore.Authorization
+@using SmartSchedulingApp.Localization;
+@using SmartSchedulingApp.Web.Pages.Doctors;
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<SmartSchedulingAppResource> L
+@inject IAuthorizationService AuthorizationService
+@model IndexModel
+@section scripts
+    {
+    <abp-script src="/Pages/Doctors/Index.js" />
+}
+<div class="row">
+    <div class="col">
+        <h4>@L["Doctors"]</h4>
+    </div>
+</div>
+<abp-card>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="DoctorsTable"></abp-table>
+    </abp-card-body>
+</abp-card>

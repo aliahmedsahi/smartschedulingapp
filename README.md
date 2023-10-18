@@ -6,9 +6,6 @@ The main features are admin can login and navigate to User menu to add user as D
 ## Application of Inheritance
 The application wisely appropriates inheritance, where the Person class serves as the super or "parent" class for three subordinate or "child" classes: Doctor, Staff, and Manager. The child classes inherit the characteristics of the Person class and incorporate additional attributes to align with their specific roles.
 
-### Entity & Aggregate Roots:
-Particular classes like Person, Schedule, Notification inherit from Entity<Guid> or FullAuditedAggregateRoot<Guid>, the base classes provided by the framework that encompass an Id property for the unique identification of instances.
-
 ### App Services & Domain Services:
 To handle domain logic, classes PersonManager, DoctorManager, and StaffManager inherit from DomainService. On the same note, for service layer functionalities, IPersonAppService, IStaffAppService, and IDoctorAppService inherit from IApplicationService.
 

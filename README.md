@@ -45,7 +45,7 @@ Dependency Injection has been handled in application services like DoctorAppServ
 
 ## Domain Service vs Application Service
 ### Domain Services:
-Domain services such as PersonManager, DoctorManager, StaffManager are utilized for handling complex business logic, as seen in the operation StaffManager.AddSchedule().
+Domain services such as PersonManager, DoctorManager, StaffManager are utilized for handling complex business logic, In my code, the StaffManager.AddSchedule() operation is a prime example of a using Domain Service, well justified because it doesn’t belong to one single type of object and involves multiple entities and objects (Staff, Schedule, and Timeslot). It encodes an important domain concept (i.e., the check for overlapping schedules) that is not naturally part of one particular entity.
 
 ### Application Services:
 Application services like IPersonAppService, IDoctorAppService, IStaffAppService handles operations involving task coordination, security, user interactions, and more application-specific tasks rather than business logic.

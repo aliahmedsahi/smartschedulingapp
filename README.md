@@ -77,14 +77,17 @@ While these modules help us to work more efficiently and organize our work bette
 3. Are you planning to assign a dedicated team to these features?
 4. Is there a possibility of reusing these features in other applications?
 5. Are you considering a dedicated database for this feature set?
-6. Is this feature set meant to be handled by a dedicated team, separate from the other features?
 
 ## Other Questions
 1. What tools and technologies are involved in the project (Backend, frontend, database etc), and the reasoning behind their choices?
-2. Who is the target market for this project?
-3. Is there a cadence for new feature requests, and are any features currently in the pipeline?
-4. How much of the project has already been completed and what's remaining?
-5. What is the coverage of the application? Is it only Web-based, or are there Desktop and Mobile versions available too?
-6. Is there room for modifications in the existing application features, keeping in mind the open-closed principle?
+2. What type of architecture patterns you are using in your applicaiton? 
+3. What is the target market for this project?
+4. What is the status of project requirements? Are we following agile or waterfall method?
+5. Do we have any pending task that are already defined for the next milestones? How do you gather the requirements?
+6. How much of the project has already been completed and what's remaining?
+7. What platforms are you planning to build this application for? Web/Desktop/Mobile
+8. Is there room for modifications in the existing application features, keeping in mind the open-closed principle?
+9. Is this your own product or you are building this as a project for some client?
+
 
 

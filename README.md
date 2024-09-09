@@ -70,24 +70,5 @@ Sometimes these modules need to share the same information. To simplify this, we
 
 While these modules help us to work more efficiently and organize our work better, managing many modules can sometimes cause confusion, with dependencies making things complex.
 
-## Questions to Validate Modularity
-
-1. Do you want to run these features independently from other modules?
-2. Do you plan on selling these features separately to clients?
-3. Are you planning to assign a dedicated team to these features?
-4. Is there a possibility of reusing these features in other applications?
-5. Are you considering a dedicated database for this feature set?
-
-## Other Questions
-1. What tools and technologies are involved in the project (Backend, frontend, database etc), and the reasoning behind their choices?
-2. What type of architecture patterns you are using in your applicaiton? 
-3. What is the target market for this project?
-4. What is the status of project requirements? Are we following agile or waterfall method?
-5. Do we have any pending task that are already defined for the next milestones? How do you gather the requirements?
-6. How much of the project has already been completed and what's remaining?
-7. What platforms are you planning to build this application for? Web/Desktop/Mobile
-8. Is there room for modifications in the existing application features, keeping in mind the open-closed principle?
-9. Is this your own product or you are building this as a project for some client?
-
 
 

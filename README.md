@@ -1,7 +1,7 @@
 # Smart Scheduling App for Healthcare Organizations
-Allow me to walk you through my ABP.io application the technical assement. The application is centered around a smart-scheduling software that fulfills several essential features. Throughout the development process, I used various principles of object-oriented programming (OOP), .NET core principles, and Domain-Driven Design (DDD).
+Allow me to walk you through my sample ABP.io. The application is centred around smart-scheduling software that fulfils several essential features. Throughout the development process, I used various principles of object-oriented programming (OOP), .NET core principles, and Domain-Driven Design (DDD).
 
-The main features are admin can login and navigate to User menu to add user as Doctors, Staff and Mananger. By overriding the ABP.io default user creation module I am creating a user and also saving the person information in the third tab. After that admin can assign schedule for the doctor and staff and it will automatically create a notification for staff and doctor. Both staff and doctor can login and see the dashboard for details. 
+The main features are that the admin can log in and navigate to the User menu to add users as Doctors, Staff and Mananger. By overriding the ABP.io default user creation module I am creating a user and also saving the person information in the third tab. After that admin can assign schedule for the doctor and staff and it will automatically create a notification for staff and doctor. Both staff and doctor can login and see the dashboard for details. 
 
 ## Application of Inheritance
 The application wisely appropriates inheritance, where the Person class serves as the super or "parent" class for three subordinate or "child" classes: Doctor, Staff, and Manager. The child classes inherit the characteristics of the Person class and incorporate additional attributes to align with their specific roles.
